@@ -1,0 +1,8 @@
+[28-May-2015 08:53:53 UTC] PHP Warning:  in_array() expects parameter 2 to be array, string given in /home2/cherrya1/public_html/uzomadozie/blog/wp-content/themes/tracks/inc/customizer.php on line 66
+[28-May-2015 08:54:31 UTC] PHP Warning:  in_array() expects parameter 2 to be array, string given in /home2/cherrya1/public_html/uzomadozie/blog/wp-content/themes/tracks/inc/customizer.php on line 66
+[28-May-2015 08:56:46 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/cherrya1/public_html/uzomadozie/blog/wp-content/themes/tracks/inc/customizer.php on line 844
+[28-May-2015 08:57:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/cherrya1/public_html/uzomadozie/blog/wp-content/themes/tracks/inc/customizer.php on line 844
+[28-May-2015 08:58:24 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/cherrya1/public_html/uzomadozie/blog/wp-content/themes/tracks/inc/customizer.php on line 844
+[28-May-2015 08:59:00 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/cherrya1/public_html/uzomadozie/blog/wp-content/themes/tracks/inc/customizer.php on line 844
+[28-May-2015 08:59:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/cherrya1/public_html/uzomadozie/blog/wp-content/themes/tracks/inc/customizer.php on line 844
+[28-May-2015 09:01:07 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home2/cherrya1/public_html/uzomadozie/blog/wp-content/themes/tracks/inc/customizer.php on line 844
