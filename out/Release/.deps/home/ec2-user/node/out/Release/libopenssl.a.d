@@ -1,0 +1,1 @@
+cmd_/home/ec2-user/node/out/Release/libopenssl.a := ln -f "/home/ec2-user/node/out/Release/obj.target/deps/openssl/libopenssl.a" "/home/ec2-user/node/out/Release/libopenssl.a" 2>/dev/null || (rm -rf "/home/ec2-user/node/out/Release/libopenssl.a" && cp -af "/home/ec2-user/node/out/Release/obj.target/deps/openssl/libopenssl.a" "/home/ec2-user/node/out/Release/libopenssl.a")
