@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Roulette</title>
+    <link rel="stylesheet" type="text/css" href="/css/game.css">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css">
+    
+    </style>
+  </head>
+ <body onload="init();" style="background:url('img/background.jpg');">
+  <div id="wrapper_mob">
+    <div style="text-align:center">
+      <img src="/img/logo.png">
+    </div>
+    <div style="margin-top:80px; border:7px solid #551f0d; background:url(/img/green_back.jpg); background-size:cover; border-radius:7px; padding:10px">
+     <div id="bet_table" class="mobile-table" style=" position:relative">
+       <img src="/img/mobile-table.png">
+     </div>
+    </div>
+  </div>
+
+<script src="http://localhost:3001/socket.io/socket.io.js"></script>
+<script src="js/socket.io-1.2.0.js"></script>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/createjs-2015.05.21.min.js"></script>
+<script src="/js/raphael.js"></script>
+<script src="/js/interface_mobile.js"></script>
+<script src="/js/jquery-canvas-sparkles.js"></script>
+
+<script src="/js/game.js"></script>
+<script type="text/javascript" src="/js/jquery.transit.min.js"></script>
+<script type="text/javascript" src="/js/circle-progress.js"></script>
+<script type="text/javascript">
+$('#circle').circleProgress({
+        value: 1,
+        size: 100,
+        fill: {
+            image: "/img/grad.png"
+        },
+        thickness : 10,
+        emptyFill : "rgba(0, 0, 0, .5)"
+    });
+</script>
+</body>
+</html>

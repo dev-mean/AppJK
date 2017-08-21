@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Roulette</title>
+    <link rel="stylesheet" type="text/css" href="/css/game.css">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    body{
+      font-family: 'Roboto', sans-serif;
+    }
+    </style>
+  </head>
+ <body onload="init();" style="background:url('img/background.jpg');">
+  <div style="text-align:center">
+    <img src="/img/logo.png">
+  </div>
+  <div id="betting_table" style="width:1000px; margin:0 auto; margin-top:15px;z-index:-1; position:relative ">
+    <div style="position:absolute; background:rgba(0,0,0,.50); box-shadow:0 10px 105px 15px #000; border-radius:80px">
+        
+        <div id="circle" style="position:absolute; right:0px; top:15px;"></div>
+        <div style="position:absolute; top:47px; right:0px; width:100px; text-align:center; color:#FFF; font-size:36px;  " id="bet_end">10</div>
+
+        <div id="bet_text" style="position:absolute; top:50px; left:560px; color:#FFF">
+          <img src="/img/bet_amount.png">
+        </div>
+        <div id="won_text" style="position:absolute; top:50px; left:560px; color:#FFF; display:none" class="animated">
+          <img src="/img/won.png">
+        </div>
+        <div id="bet_amount" style="position:absolute; top:60px; left:730px; color:#FFF; font-size:60px">00000</div>
+        <div style="position:absolute; top:16px; left:760px; color:#FFF; font-size:36px;">
+          <span id="credits">000000</span>
+        </div>
+        <div style="position:absolute; top:39px; left:580px; color:#FFF; font-size:16px;">
+          <span id="game_number">000000</span>
+        </div>
+        <div style="position:absolute; top:18px; left:595px; color:#FFF; font-size:16px;">
+          <span id="no_players">000000</span>
+        </div>
+        
+      <div id="last_bets" style="height:460px; position:absolute; width:40px; right:0px; top:195px; border-bottom:1px solid rgb(104, 54, 31);">
+        <div id="bets">
+          <div class="last_black">15</div>
+          <div class="last_black">4</div>
+          <div class="last_red">1</div>
+          <div class="last_red">34</div>
+          <div class="last_green">00</div>
+          <div class="last_black">22</div>
+          <div class="last_red">36</div>
+          <div class="last_green">0</div>
+          <div class="last_black">17</div>
+          <div class="last_red">30</div>
+        </div>
+		 
+      </div>
+
+
+      <div style="position:absolute;">
+        
+        <!-- <div style="float:left; background:#EEE; padding:10px; margin:5px; ">Win <span id="win"></span></div> -->
+
+
+		<!-- <div style="float:right; background:#EEE; padding:10px; margin:5px; ">Last Won : <span id="results"></span></div> -->
+      </div>
+      <img src="img/roulette.png">
+    </div>
+    <div style="position:relative;  top:188px; left:387px; width:200px" id="bet_table">
+      <div style="position:absolute;  top:0; left:0; width:200px" class="num_-1" value="-1">
+      <svg height="72" width="60" style="position:absolute; cursor:pointer" value="49">
+        <polygon points="0,36 24,0 56,0 56,72 24,72" fill="white" fill-opacity="0" />
+      </svg>
+    </div>
+    <div style="position:absolute;  top:72px; left:0; width:200px" class="num_0" value="0">
+      <svg height="72" width="60" style="position:absolute; cursor:pointer" value="0">
+        <polygon points="0,36 24,0 56,0 56,72 24,72" fill="white" fill-opacity="0" />
+      </svg>
+    </div>
+    </div>
+    
+    <div style="position:absolute;  top:462px; left:475px; ">
+      <div class="bet-coin bet-coin-select" style="display:inline-block; margin-right:5px" data-id="1">
+        <img class="" src="img/1.png" style="width:44px; height:auto">
+      </div>
+      <div class="bet-coin" style="display:inline-block; margin-right:5px" data-id="5">
+        <img src="img/5.png" style="width:44px; height:auto">
+      </div>
+      <div class="bet-coin" style="display:inline-block; margin-right:5px" data-id="10">
+        <img src="img/10.png" style="width:44px; height:auto">
+      </div>
+      <div class="bet-coin" style="display:inline-block; margin-right:5px" data-id="50">
+        <img src="img/50.png" style="width:44px; height:auto">
+      </div>
+      <div class="bet-coin" style="display:inline-block; margin-right:5px" data-id="100">
+        <img src="img/100.png" style="width:44px; height:auto">
+      </div>
+      <div class="bet-coin" style="display:inline-block; margin-right:5px" data-id="1000">
+        <img src="img/1000.png" style="width:44px; height:auto">
+      </div>
+      <div class="bet-coin" style="display:inline-block; margin-right:5px" data-id="5000">
+        <img src="img/5000.png" style="width:44px; height:auto">
+      </div>
+    </div>
+    <div style="position:absolute;  top:530px; left:400px; ">
+      <button class="clear_bets">Clear Bets</button>
+      <button class="clear_last_bet">Clear Last Bet</button>
+      <button class="repeat_bet">Repeat Bet</button>
+    </div>
+
+    <canvas width="400px" height="400px" id="roulette" style="position:absolute; z-index:1; top:150px; left:-10px "></canvas>
+    <div style="position:absolute; z-index:100; top:230px; left:100px; font-size:200px; color:#FFF;width:200px; text-align:center; text-shadow: 0 0 15px #000;" id="final_number">
+
+    </div>
+
+    <div id="status" style="position:absolute; padding:20px; background:url('/img/shadow_text.png'); color:#FFF; text-align:center; margin-top:100px; width:1000px; z-index:999; height:400px; font-size:36px; line-height:300px; text-transform:uppercase; text-shadow:0 0 15px #C5F1F4; display:none">
+      
+    </div>
+
+  </div>
+
+<script src="http://localhost:3001/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+  var game_url = 'http://localhost:3001';
+</script>
+<script src="js/socket.io-1.2.0.js"></script>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/createjs-2015.05.21.min.js"></script>
+<script src="/js/raphael.js"></script>
+<script src="/js/interface.js"></script>
+<script src="/js/jquery-canvas-sparkles.js"></script>
+
+<script src="/js/game.js"></script>
+<script type="text/javascript" src="/js/jquery.transit.min.js"></script>
+<script type="text/javascript" src="/js/circle-progress.js"></script>
+<script type="text/javascript">
+$('#circle').circleProgress({
+        value: 1,
+        size: 100,
+        fill: {
+            image: "/img/grad.png"
+        },
+        thickness : 10,
+        emptyFill : "rgba(0, 0, 0, .5)"
+    });
+</script>
+</body>
+</html>
